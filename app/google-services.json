@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "498686346386",
+    "project_id": "authentication-96207",
+    "storage_bucket": "authentication-96207.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498686346386:android:69191861a8f79180f2524b",
+        "android_client_info": {
+          "package_name": "com.example.movie_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498686346386-rdb6jml34iqhos28lv3ql3mk4sks1e3s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBABoBrJX9DL3f2L7Z_wXYsmknbOyLJgQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498686346386-rdb6jml34iqhos28lv3ql3mk4sks1e3s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
