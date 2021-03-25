@@ -3,8 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#75CC5B"
-    android:orientation="vertical"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -33,19 +34,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#292E53"
-            android:textColor="#D8D4D4"
             android:text="SIGN IN"
-            android:textSize="30dp"
-            />
+            android:textColor="#D8D4D4"
+            android:textSize="30dp" />
 
         <Button
             android:id="@+id/signUp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
-            android:textColor="#D8D4D4"
             android:backgroundTint="#292E53"
             android:text="SIGN UP"
+            android:textColor="#D8D4D4"
             android:textSize="30dp" />
     </LinearLayout>
 
@@ -77,3 +77,5 @@
     </LinearLayout>
 
 </LinearLayout>
+
+

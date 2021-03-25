@@ -21,20 +21,21 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUpActivity extends AppCompatActivity {
-    private EditText emailEt,passwordEt1,passwordEt2;
+    private EditText emailEt, passwordEt1, passwordEt2;
     private Button SignUpButton;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-        firebaseAuth=FirebaseAuth.getInstance();
-        emailEt=findViewById(R.id.email);
-        passwordEt1=findViewById(R.id.password1);
-        passwordEt2=findViewById(R.id.password2);
-        SignUpButton=findViewById(R.id.register);
-        progressDialog=new ProgressDialog(this);
+        firebaseAuth = FirebaseAuth.getInstance();
+        emailEt = findViewById(R.id.email);
+        passwordEt1 = findViewById(R.id.password1);
+        passwordEt2 = findViewById(R.id.password2);
+        SignUpButton = findViewById(R.id.register);
+        progressDialog = new ProgressDialog(this);
         SignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -44,6 +45,7 @@ public class SignUpActivity extends AppCompatActivity {
         });
 
     }
+
     private void register() {
         String email = emailEt.getText().toString();
         String password1 = passwordEt1.getText().toString();
@@ -85,7 +87,8 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
-    private boolean isValidEmail(String email){
+
+    private boolean isValidEmail(String email) {
         return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
 
 

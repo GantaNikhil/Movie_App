@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center_horizontal"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="400dp"
@@ -47,37 +46,37 @@
             android:id="@+id/email"
             android:layout_width="375dp"
             android:layout_height="50dp"
-            android:hint="Enter the email"
-            android:textStyle="italic"
-            android:textSize="25dp"
-            android:inputType="textEmailAddress"
-            android:background="#AEA9A9"
             android:layout_marginTop="60dp"
-            android:paddingLeft="20dp"/>
+            android:background="#AEA9A9"
+            android:hint="Enter the email"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:textSize="25dp"
+            android:textStyle="normal" />
 
         <EditText
             android:id="@+id/password1"
             android:layout_width="375dp"
             android:layout_height="50dp"
-            android:inputType="textPassword"
-            android:hint="Enter the password"
-            android:textStyle="italic"
-            android:textSize="25dp"
-            android:background="#AEA9A9"
             android:layout_marginTop="40dp"
-            android:paddingLeft="20dp"/>
+            android:background="#AEA9A9"
+            android:hint="Enter the password"
+            android:inputType="textPassword"
+            android:paddingLeft="20dp"
+            android:textSize="25dp"
+            android:textStyle="normal" />
 
         <EditText
             android:id="@+id/password2"
             android:layout_width="375dp"
             android:layout_height="50dp"
-            android:hint="Re-enter the password"
-            android:textStyle="italic"
-            android:textSize="25dp"
-            android:background="#AEA9A9"
             android:layout_marginTop="40dp"
+            android:background="#AEA9A9"
+            android:hint="Re-enter the password"
             android:inputType="textPassword"
-            android:paddingLeft="20dp"/>
+            android:paddingLeft="20dp"
+            android:textSize="25dp"
+            android:textStyle="normal" />
 
         <Button
             android:id="@+id/register"
@@ -86,10 +85,9 @@
             android:layout_marginTop="40dp"
             android:backgroundTint="#292E53"
             android:text="Sign Up"
-            android:textSize="25dp"
-            android:textColor="#D8D4D4"
             android:textAllCaps="false"
-            />
+            android:textColor="#D8D4D4"
+            android:textSize="25dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
