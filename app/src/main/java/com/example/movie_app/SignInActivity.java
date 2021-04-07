@@ -1,18 +1,17 @@
 package com.example.movie_app;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -20,7 +19,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignInActivity extends AppCompatActivity {
-    private EditText emailEt,passwordEt;
+    private EditText emailEt, passwordEt;
     private Button SignInButton;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -31,15 +30,16 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signin);
         firebaseAuth = FirebaseAuth.getInstance();
+
         emailEt = findViewById(R.id.email);
         passwordEt = findViewById(R.id.password);
         SignInButton = findViewById(R.id.logIn);
         SignUpOne = findViewById(R.id.signUp1);
+
         progressDialog = new ProgressDialog(this);
         SignInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 login();
             }
         });
@@ -52,7 +52,8 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
-    private void login(){
+
+    private void login() {
         String email = emailEt.getText().toString();
         String password = passwordEt.getText().toString();
         if (TextUtils.isEmpty(email)) {
@@ -62,6 +63,7 @@ public class SignInActivity extends AppCompatActivity {
             passwordEt.setError("Enter your Password");
             return;
         }
+
         progressDialog.setMessage("Please wait.....");
         progressDialog.show();
         progressDialog.setCanceledOnTouchOutside(false);

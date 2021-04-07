@@ -1,8 +1,9 @@
-package com.example.movie_app;
+package com.example.movie_app.MovieCategory;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class ListItem {
 
@@ -50,4 +51,5 @@ public class ListItem {
     public void setTotalResults(Integer totalResults) {
         this.totalResults = totalResults;
     }
+
 }

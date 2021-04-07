@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="0dp">
 
         <TextView
-            android:layout_width="400dp"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="#DADBDD"
@@ -36,7 +36,6 @@
             android:textSize="40dp"
             android:textStyle="bold" />
 
-
         <ImageView
             android:layout_width="225dp"
             android:layout_height="200dp"
@@ -46,9 +45,9 @@
 
         <EditText
             android:id="@+id/email"
-            android:layout_width="375dp"
+            android:layout_width="365dp"
             android:layout_height="50dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="30dp"
             android:background="#AEA9A9"
             android:hint="Enter the email"
             android:inputType="textEmailAddress"
@@ -58,9 +57,9 @@
 
         <EditText
             android:id="@+id/password"
-            android:layout_width="375dp"
+            android:layout_width="365dp"
             android:layout_height="50dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:background="#AEA9A9"
             android:hint="Enter the password"
             android:inputType="textPassword"
@@ -70,9 +69,9 @@
 
         <Button
             android:id="@+id/logIn"
-            android:layout_width="200dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:backgroundTint="#292E53"
             android:text="Sign In"
             android:textAllCaps="false"
@@ -104,7 +103,6 @@
                 android:textColor="#000000"
                 android:textSize="22dp"
                 android:textStyle="bold" />
-
 
         </LinearLayout>
 

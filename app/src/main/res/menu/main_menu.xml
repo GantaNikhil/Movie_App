@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/home_icon"
-            android:title="Home" />
-        <item
-            android:id="@+id/fav"
-            android:icon="@drawable/fav_icon"
-            android:title="Favourites" />
-        <item
-            android:id="@+id/logOut"
-            android:icon="@drawable/logout_icon"
-            android:title="Log Out" />
-
-    </group>
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/logOut"
+        android:icon="@drawable/logout_icon"
+        android:title="Log Out"
+        app:showAsAction="ifRoom" />
 </menu>
