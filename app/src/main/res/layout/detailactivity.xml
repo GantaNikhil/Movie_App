@@ -1,108 +1,114 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffff"
-    android:orientation="vertical">
+    android:background="#ffff">
 
-    <ImageView
-        android:id="@+id/backdroppath"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:padding="15dp"
-        android:src="@mipmap/ic_launcher" />
+        android:layout_height="match_parent"
+        android:background="#ffff"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/OriginalTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#ECE5E5"
-        android:gravity="center"
-        android:paddingTop="5dp"
-        android:text=" Original Title"
-        android:textColor="#DD3170"
-        android:textSize="33dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingTop="10dp"
-        android:text="Story :"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/overview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#ECE5E5"
-        android:paddingLeft="15dp"
-        android:paddingTop="5dp"
-        android:paddingRight="5dp"
-        android:text="Blah blah "
-        android:textColor="#000000"
-        android:textSize="20sp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="15dp">
+        <ImageView
+            android:id="@+id/backdroppath"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:padding="15dp"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
+            android:id="@+id/OriginalTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:text="Released On : "
-            android:textColor="#000000"
-            android:textSize="25dp" />
-
-        <TextView
-            android:id="@+id/releaseDate"
-            android:layout_width="206dp"
-            android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:background="#ECE5E5"
             android:gravity="center"
-            android:text="blah blah "
+            android:paddingTop="5dp"
+            android:text=" Original Title"
             android:textColor="#DD3170"
-            android:textSize="25sp"
+            android:textSize="33dp"
             android:textStyle="bold" />
 
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="15dp">
-
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:paddingLeft="10dp"
-            android:text="Rating  :"
+            android:paddingTop="10dp"
+            android:text="Story :"
             android:textColor="#000000"
-            android:textSize="23sp" />
-
-        <TextView
-            android:id="@+id/rating"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
-            android:text="blah blah "
-            android:textColor="#DD3170"
             android:textSize="25sp"
             android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/overview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ECE5E5"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:paddingRight="5dp"
+            android:text="Blah blah "
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:text="Released On : "
+                android:textColor="#000000"
+                android:textSize="25dp" />
+
+            <TextView
+                android:id="@+id/releaseDate"
+                android:layout_width="206dp"
+                android:layout_height="wrap_content"
+                android:background="#ECE5E5"
+                android:gravity="center"
+                android:text="blah blah "
+                android:textColor="#DD3170"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="Rating  :"
+                android:textColor="#000000"
+                android:textSize="23sp" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:text="blah blah "
+                android:textColor="#DD3170"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
 
 
     </LinearLayout>
 
-
-</LinearLayout>
+</ScrollView>
