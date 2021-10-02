@@ -1,3 +1,3 @@
 ### Movie_App
 This fetches all new movies from using apis
-### All your favourite movies are available here
+Awesome movie_app, and is a one stop for all movie lovers.
