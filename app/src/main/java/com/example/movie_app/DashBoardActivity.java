@@ -118,23 +118,15 @@ public class DashBoardActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are You Sure You Want to Log Out ?")
                 .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Logout = (View) findViewById(R.id.logOut);
-                        FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(DashBoardActivity.this, MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                        DashBoardActivity.super.onBackPressed();
-                    }
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    Logout = (View) findViewById(R.id.logOut);
+                    FirebaseAuth.getInstance().signOut();
+                    Intent intent = new Intent(DashBoardActivity.this, MainActivity.class);
+                    startActivity(intent);
+                    finish();
+                    DashBoardActivity.super.onBackPressed();
                 })
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
+                .setNegativeButton("No", (dialog, which) -> dialog.cancel());
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
     }
@@ -142,45 +134,39 @@ public class DashBoardActivity extends AppCompatActivity {
     private void getPopular() {
         listItems = new ArrayList<>();
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL_DATA_POPULAR, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray array = response.getJSONArray("results");
-                            for (int i = 0; i < array.length(); i++) {
+                response -> {
+                    try {
+                        JSONArray array = response.getJSONArray("results");
+                        for (int i = 0; i < array.length(); i++) {
 
-                                JSONObject o = array.getJSONObject(i);
-                                Result item = new Result();
+                            JSONObject o = array.getJSONObject(i);
+                            Result item = new Result();
 
-                                item.setAdult(o.getBoolean("adult"));
-                                item.setBackdropPath(o.getString("backdrop_path"));
-                                item.setId(o.getInt("id"));
-                                item.setOriginalLanguage(o.getString("original_language"));
-                                item.setOriginalTitle(o.getString("original_title"));
-                                item.setOverview(o.getString("overview"));
-                                item.setPopularity(o.getDouble("popularity"));
-                                item.setPosterPath(o.getString("poster_path"));
-                                item.setReleaseDate(o.getString("release_date"));
-                                item.setTitle(o.getString("title"));
-                                item.setVideo(o.getBoolean("video"));
-                                item.setVoteAverage(o.getDouble("vote_average"));
-                                item.setVoteCount(o.getInt("vote_count"));
-                                listItems.add(item);
-                            }
-                            VerticalModel verticalModel = new VerticalModel("Popular Movies", listItems);
-                            verticalModelList.add(verticalModel);
-                            getTopRated();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            item.setAdult(o.getBoolean("adult"));
+                            item.setBackdropPath(o.getString("backdrop_path"));
+                            item.setId(o.getInt("id"));
+                            item.setOriginalLanguage(o.getString("original_language"));
+                            item.setOriginalTitle(o.getString("original_title"));
+                            item.setOverview(o.getString("overview"));
+                            item.setPopularity(o.getDouble("popularity"));
+                            item.setPosterPath(o.getString("poster_path"));
+                            item.setReleaseDate(o.getString("release_date"));
+                            item.setTitle(o.getString("title"));
+                            item.setVideo(o.getBoolean("video"));
+                            item.setVoteAverage(o.getDouble("vote_average"));
+                            item.setVoteCount(o.getInt("vote_count"));
+                            listItems.add(item);
                         }
+                        VerticalModel verticalModel = new VerticalModel("Popular Movies", listItems);
+                        verticalModelList.add(verticalModel);
+                        getTopRated();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        getPopular();
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                error -> {
+                    getPopular();
+                    Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
@@ -189,45 +175,39 @@ public class DashBoardActivity extends AppCompatActivity {
     private void getTopRated() {
         listItems = new ArrayList<>();
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL_DATA_TOPRATED, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray array = response.getJSONArray("results");
-                            for (int i = 0; i < array.length(); i++) {
+                response -> {
+                    try {
+                        JSONArray array = response.getJSONArray("results");
+                        for (int i = 0; i < array.length(); i++) {
 
-                                JSONObject o = array.getJSONObject(i);
-                                Result item = new Result();
+                            JSONObject o = array.getJSONObject(i);
+                            Result item = new Result();
 
-                                item.setAdult(o.getBoolean("adult"));
-                                item.setBackdropPath(o.getString("backdrop_path"));
-                                item.setId(o.getInt("id"));
-                                item.setOriginalLanguage(o.getString("original_language"));
-                                item.setOriginalTitle(o.getString("original_title"));
-                                item.setOverview(o.getString("overview"));
-                                item.setPopularity(o.getDouble("popularity"));
-                                item.setPosterPath(o.getString("poster_path"));
-                                item.setReleaseDate(o.getString("release_date"));
-                                item.setTitle(o.getString("title"));
-                                item.setVideo(o.getBoolean("video"));
-                                item.setVoteAverage(o.getDouble("vote_average"));
-                                item.setVoteCount(o.getInt("vote_count"));
-                                listItems.add(item);
-                            }
-                            VerticalModel verticalModel = new VerticalModel("Top Rated Movies ", listItems);
-                            verticalModelList.add(verticalModel);
-                            getUpcoming();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            item.setAdult(o.getBoolean("adult"));
+                            item.setBackdropPath(o.getString("backdrop_path"));
+                            item.setId(o.getInt("id"));
+                            item.setOriginalLanguage(o.getString("original_language"));
+                            item.setOriginalTitle(o.getString("original_title"));
+                            item.setOverview(o.getString("overview"));
+                            item.setPopularity(o.getDouble("popularity"));
+                            item.setPosterPath(o.getString("poster_path"));
+                            item.setReleaseDate(o.getString("release_date"));
+                            item.setTitle(o.getString("title"));
+                            item.setVideo(o.getBoolean("video"));
+                            item.setVoteAverage(o.getDouble("vote_average"));
+                            item.setVoteCount(o.getInt("vote_count"));
+                            listItems.add(item);
                         }
+                        VerticalModel verticalModel = new VerticalModel("Top Rated Movies ", listItems);
+                        verticalModelList.add(verticalModel);
+                        getUpcoming();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        getTopRated();
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                error -> {
+                    getTopRated();
+                    Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
@@ -236,45 +216,39 @@ public class DashBoardActivity extends AppCompatActivity {
     private void getUpcoming() {
         listItems = new ArrayList<>();
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL_UPCOMING, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray array = response.getJSONArray("results");
-                            for (int i = 0; i < array.length(); i++) {
+                response -> {
+                    try {
+                        JSONArray array = response.getJSONArray("results");
+                        for (int i = 0; i < array.length(); i++) {
 
-                                JSONObject o = array.getJSONObject(i);
-                                Result item = new Result();
+                            JSONObject o = array.getJSONObject(i);
+                            Result item = new Result();
 
-                                item.setAdult(o.getBoolean("adult"));
-                                item.setBackdropPath(o.getString("backdrop_path"));
-                                item.setId(o.getInt("id"));
-                                item.setOriginalLanguage(o.getString("original_language"));
-                                item.setOriginalTitle(o.getString("original_title"));
-                                item.setOverview(o.getString("overview"));
-                                item.setPopularity(o.getDouble("popularity"));
-                                item.setPosterPath(o.getString("poster_path"));
-                                item.setReleaseDate(o.getString("release_date"));
-                                item.setTitle(o.getString("title"));
-                                item.setVideo(o.getBoolean("video"));
-                                item.setVoteAverage(o.getDouble("vote_average"));
-                                item.setVoteCount(o.getInt("vote_count"));
-                                listItems.add(item);
-                            }
-                            VerticalModel verticalModel = new VerticalModel("Upcoming Movies ", listItems);
-                            verticalModelList.add(verticalModel);
-                            getNowPlaying();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            item.setAdult(o.getBoolean("adult"));
+                            item.setBackdropPath(o.getString("backdrop_path"));
+                            item.setId(o.getInt("id"));
+                            item.setOriginalLanguage(o.getString("original_language"));
+                            item.setOriginalTitle(o.getString("original_title"));
+                            item.setOverview(o.getString("overview"));
+                            item.setPopularity(o.getDouble("popularity"));
+                            item.setPosterPath(o.getString("poster_path"));
+                            item.setReleaseDate(o.getString("release_date"));
+                            item.setTitle(o.getString("title"));
+                            item.setVideo(o.getBoolean("video"));
+                            item.setVoteAverage(o.getDouble("vote_average"));
+                            item.setVoteCount(o.getInt("vote_count"));
+                            listItems.add(item);
                         }
+                        VerticalModel verticalModel = new VerticalModel("Upcoming Movies ", listItems);
+                        verticalModelList.add(verticalModel);
+                        getNowPlaying();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        getUpcoming();
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                error -> {
+                    getUpcoming();
+                    Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);
@@ -283,45 +257,39 @@ public class DashBoardActivity extends AppCompatActivity {
     private void getNowPlaying() {
         listItems = new ArrayList<>();
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, URL_DATA_NOWPLAYING, null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONArray array = response.getJSONArray("results");
-                            for (int i = 0; i < array.length(); i++) {
+                response -> {
+                    try {
+                        JSONArray array = response.getJSONArray("results");
+                        for (int i = 0; i < array.length(); i++) {
 
-                                JSONObject o = array.getJSONObject(i);
-                                Result item = new Result();
+                            JSONObject o = array.getJSONObject(i);
+                            Result item = new Result();
 
-                                item.setAdult(o.getBoolean("adult"));
-                                item.setBackdropPath(o.getString("backdrop_path"));
-                                item.setId(o.getInt("id"));
-                                item.setOriginalLanguage(o.getString("original_language"));
-                                item.setOriginalTitle(o.getString("original_title"));
-                                item.setOverview(o.getString("overview"));
-                                item.setPopularity(o.getDouble("popularity"));
-                                item.setPosterPath(o.getString("poster_path"));
-                                item.setReleaseDate(o.getString("release_date"));
-                                item.setTitle(o.getString("title"));
-                                item.setVideo(o.getBoolean("video"));
-                                item.setVoteAverage(o.getDouble("vote_average"));
-                                item.setVoteCount(o.getInt("vote_count"));
-                                listItems.add(item);
-                            }
-                            VerticalModel verticalModel = new VerticalModel("Now Playing", listItems);
-                            verticalModelList.add(verticalModel);
-                            setData();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            item.setAdult(o.getBoolean("adult"));
+                            item.setBackdropPath(o.getString("backdrop_path"));
+                            item.setId(o.getInt("id"));
+                            item.setOriginalLanguage(o.getString("original_language"));
+                            item.setOriginalTitle(o.getString("original_title"));
+                            item.setOverview(o.getString("overview"));
+                            item.setPopularity(o.getDouble("popularity"));
+                            item.setPosterPath(o.getString("poster_path"));
+                            item.setReleaseDate(o.getString("release_date"));
+                            item.setTitle(o.getString("title"));
+                            item.setVideo(o.getBoolean("video"));
+                            item.setVoteAverage(o.getDouble("vote_average"));
+                            item.setVoteCount(o.getInt("vote_count"));
+                            listItems.add(item);
                         }
+                        VerticalModel verticalModel = new VerticalModel("Now Playing", listItems);
+                        verticalModelList.add(verticalModel);
+                        setData();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
                     }
                 },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        getNowPlaying();
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                    }
+                error -> {
+                    getNowPlaying();
+                    Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                 });
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(request);

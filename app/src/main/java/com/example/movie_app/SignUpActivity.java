@@ -37,13 +37,7 @@ public class SignUpActivity extends AppCompatActivity {
         passwordEt2 = findViewById(R.id.password2);
         SignUpButton = findViewById(R.id.register);
         progressDialog = new ProgressDialog(this);
-        SignUpButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                register();
-            }
-        });
+        SignUpButton.setOnClickListener(v -> register());
 
     }
 

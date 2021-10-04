@@ -40,19 +40,11 @@ public class SignInActivity extends AppCompatActivity {
         SignUpOne = findViewById(R.id.signUp1);
 
         progressDialog = new ProgressDialog(this);
-        SignInButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                login();
-            }
-        });
-        SignUpOne.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        SignInButton.setOnClickListener(v -> login());
+        SignUpOne.setOnClickListener(v -> {
+            Intent intent = new Intent(SignInActivity.this, SignUpActivity.class);
+            startActivity(intent);
+            finish();
         });
     }
 
