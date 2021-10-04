@@ -67,8 +67,10 @@ public class DashBoardActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setHomeButtonEnabled(true);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Loading Data...");
         progressDialog.show();
