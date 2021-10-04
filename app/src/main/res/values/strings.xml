@@ -9,4 +9,10 @@
     <string name="highest_rated_movies">Highest rated movies of all time</string>
     <string name="upcoming">Upcoming</string>
     <string name="stay_updated">Stay updated with the latest movies</string>
+    <string name="sign_in">Sign In</string>
+    <string name="app_title">Movie Maniac</string>
+    <string name="enter_the_email">Enter the email</string>
+    <string name="enter_the_password">Enter the password</string>
+    <string name="sign_up">Sign up</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
 </resources>
