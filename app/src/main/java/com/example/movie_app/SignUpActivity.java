@@ -15,11 +15,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 public class SignUpActivity extends AppCompatActivity {
-    private EditText emailEt, passwordEt1, passwordEt2;
+    private TextInputLayout emailEt, passwordEt1, passwordEt2;
     private Button SignUpButton;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
@@ -45,9 +48,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     private void register() {
-        String email = emailEt.getText().toString();
-        String password1 = passwordEt1.getText().toString();
-        String password2 = passwordEt2.getText().toString();
+        String email = Objects.requireNonNull(emailEt.getEditText()).getText().toString();
+        String password1 = Objects.requireNonNull(passwordEt1.getEditText()).getText().toString();
+        String password2 = Objects.requireNonNull(passwordEt2.getEditText()).getText().toString();
         if (TextUtils.isEmpty(email)) {
             emailEt.setError("Enter your Mail");
             return;
