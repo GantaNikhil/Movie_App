@@ -4,11 +4,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#75CC5B"
     tools:context=".MainActivity"
     android:layout_gravity="center_vertical|center_horizontal">
+=======
+    android:background="@color/primary_green"
+    tools:context=".MainActivity">
+>>>>>>> e8c71cb682c6835ac4077c07d40229375aea5aca
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvAppName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/coming_soon"
+        android:padding="16dp"
+        android:text="@string/app_title"
+        android:textAlignment="center"
+        android:textColor="@color/text_blue"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:textAllCaps="true" />
+
+    <ImageView
+        android:id="@+id/ivAppIcon"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:background="#020101"
+        android:src="@drawable/logo"
+        app:layout_constraintDimensionRatio="5:4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAppName"
+        tools:ignore="ContentDescription" />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="36dp"
+        android:autofillHints="emailAddress"
+        android:background="@android:color/white"
+        android:hint="@string/enter_the_email"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="12dp"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:textColorHint="#78909C"
+        android:textColor="@color/text_blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivAppIcon" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:autofillHints="password"
+        android:background="@android:color/white"
+        android:hint="@string/enter_the_password"
+        android:textColorHint="#78909C"
+        android:inputType="textPassword"
+        android:paddingHorizontal="12dp"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:textColor="@color/text_blue"
+        app:layout_constraintEnd_toEndOf="@id/email"
+        app:layout_constraintStart_toStartOf="@id/email"
+        app:layout_constraintTop_toBottomOf="@id/email" />
+
+    <Button
+        android:id="@+id/logIn"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/text_blue"
+        android:text="@string/sign_in"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@id/password"
+        app:layout_constraintStart_toStartOf="@id/password"
+        app:layout_constraintTop_toBottomOf="@id/password" />
 
     <LinearLayout
+<<<<<<< HEAD
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -21,10 +107,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
+=======
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:orientation="horizontal">
+
+>>>>>>> e8c71cb682c6835ac4077c07d40229375aea5aca
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:fontFamily="@font/coming_soon"
             android:text="MOVIE MANIAC"
             android:textColor="#081F4C"
@@ -103,17 +200,30 @@
             android:text="Don't have an account?"
             android:textColor="#000000"
             android:textSize="20dp" />
+=======
+            android:text="@string/don_t_have_an_account"
+            android:textColor="@color/text_blue"
+            android:textSize="18sp" />
+>>>>>>> e8c71cb682c6835ac4077c07d40229375aea5aca
 
         <TextView
             android:id="@+id/signUp1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:backgroundTint="#75CC5B"
             android:paddingLeft="10dp"
             android:text="Sign up"
             android:textAllCaps="false"
             android:textColor="#000000"
             android:textSize="22dp"
+=======
+            android:padding="8dp"
+            android:text="@string/sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/text_blue"
+            android:textSize="22sp"
+>>>>>>> e8c71cb682c6835ac4077c07d40229375aea5aca
             android:textStyle="bold" />
 
     </LinearLayout>

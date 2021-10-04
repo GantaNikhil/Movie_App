@@ -61,8 +61,8 @@ public class AdapterActivity extends RecyclerView.Adapter<AdapterActivity.ViewHo
 
         public ViewHolderActivity(@NonNull View itemView) {
             super(itemView);
-            categorymovies = (TextView) itemView.findViewById(R.id.categoryMovies);
-            recyclerView = (RecyclerView) itemView.findViewById(R.id.recyclerView1);
+            categorymovies =itemView.findViewById(R.id.categoryMovies);
+            recyclerView = itemView.findViewById(R.id.recyclerView1);
         }
     }
 }
