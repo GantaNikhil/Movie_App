@@ -1,5 +1,10 @@
 # Movie_App
 
+<p align="center">
+  <img src="images/ss.jpeg" height="400" title="hover text">
+</p>
+
+
 - This a Java based app with a simple UI.
 - Users can Sign up with their email and get Suggestions about some of the popular and top rated movies
 - This fetches all new movies using an api (TMDB)
@@ -24,4 +29,4 @@ Made with [contributors-img](https://contrib.rocks).
 
 Every contribution matters.
 
-P.S : even fixing a typo is valid 😊
+P.S : Even fixing a typo is valid 😊
