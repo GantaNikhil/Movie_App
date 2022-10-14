@@ -29,4 +29,4 @@ Made with [contributors-img](https://contrib.rocks).
 
 Every contribution matters.
 
-P.S : Even fixing a typo is valid
+P.S : Even fixing a typo is valid contribution.
